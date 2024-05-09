@@ -1,3 +1,4 @@
+# ------------- Default by Astro -------------
 # build output
 dist/
 
@@ -22,3 +23,14 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# ------------- Add by Kariko -------------
+# local memo
+/_note/*
+
+# 設定値
+/src/common/constants/*
+/src/common/styles/*.const.ts
+
+# 画像ファイル
+/public/images/*
