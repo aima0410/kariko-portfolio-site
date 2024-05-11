@@ -32,5 +32,9 @@ pnpm-debug.log*
 /src/common/constants/*
 /src/common/styles/*.const.ts
 
+# テキストコンテンツ
+/public/locales/*
+
 # 画像ファイル
 /public/images/*
+/src/common/imgaes/*
