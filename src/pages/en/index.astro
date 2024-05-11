@@ -1,7 +1,23 @@
 ---
 import App from '_app';
+// ---- Components ----
+import Header from '@layouts/_Header.astro';
+import FirstView from '@layouts/FirstView.astro'
+import AboutMe from '@layouts/AboutMe.astro';
+import Works from '@layouts/Works.astro';
+import ToolBox from '@layouts/ToolBox.astro';
+import Contact from '@layouts/Contact.astro';
+import Finally from '@layouts/Finally.astro';
 ---
 
-<App title="Welcome to Astro.">
-  <main></main>
+<App title="Astro | English">
+  <main>
+    <Header />
+    <FirstView />
+    <AboutMe />
+    <Works />
+    <ToolBox />
+    <Contact />
+    <Finally />
+  </main>
 </App>

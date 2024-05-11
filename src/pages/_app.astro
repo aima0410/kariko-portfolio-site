@@ -4,6 +4,8 @@ interface Props {
 }
 const { title } = Astro.props;
 
+// ---- Components ----
+import Footer from "@layouts/_Footer.astro";
 // ---- i18n 多言語対応 ----
 import i18next from 'i18next';
 import { HeadHrefLangs } from 'astro-i18next/components';
@@ -51,8 +53,8 @@ const rootVars = `${cssVarsPre.join('')}`;
     </script>
   </head>
   <body>
-    <p>aaaa</p>
     <slot />
+    <Footer />
     <style is:global>
       code {
         font-family:
