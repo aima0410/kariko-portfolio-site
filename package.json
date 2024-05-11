@@ -6,12 +6,29 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "prettier --write --ignore-path .gitignore './**/*.{js,cjs,ts,jsx,tsx,astro,json,html,md}' && eslint --ext .js,.jsx,.ts,.tsx --fix ./ && eslint --ext '.js,.cjs,.ts,.jsx,.tsx,.astro' --fix . && astro check && astro build && astro preview",
+    "astro": "astro",
+    "check": "astro check && tsc --noEmit",
+    "lint": "eslint --ext '.js,.cjs,.ts,.jsx,.tsx,.astro' .",
+    "lint:fix": "eslint --ext '.js,.cjs,.ts,.jsx,.tsx,.astro' --fix .",
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,cjs,ts,jsx,tsx,astro,json,html,md}' && eslint --ext .js,.jsx,.ts,.tsx --fix ./"
   },
   "dependencies": {
-    "astro": "^4.8.0",
     "@astrojs/check": "^0.6.0",
+    "@fontsource-variable/noto-sans-jp": "^5.0.19",
+    "@fontsource-variable/outfit": "^5.0.13",
+    "astro": "^4.8.0",
+    "astro-i18next": "^1.0.0-beta.21",
+    "gsap": "^3.12.5",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-astro": "^1.1.2",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0"
   }
 }
