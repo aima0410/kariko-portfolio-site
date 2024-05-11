@@ -1,0 +1,18 @@
+/* よく使うlayout用のスタイルの組み合わせを定義する */
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridCenter {
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 768px) {
+  .flexCenter {
+    flex-direction: column;
+  }
+}
