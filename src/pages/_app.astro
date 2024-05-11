@@ -1,0 +1,73 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+
+// ---- i18n 多言語対応 ----
+import i18next from 'i18next';
+import { HeadHrefLangs } from 'astro-i18next/components';
+// ---- CSS ----
+import fonts from '@styles/fonts.conts';
+// ---- CSS変数 埋め込み準備 ----
+const cssVarsPre = [
+  `--ja: ${fonts.fontFamily.JA};`,
+  `--en: ${fonts.fontFamily.EN};`,
+  `--txtSM: ${fonts.fontSize.text.SMALL};`,
+  `--txtMD: ${fonts.fontSize.text.MEDIUM};`,
+  `--txtLG: ${fonts.fontSize.text.LARGE};`,
+  `--hSM: ${fonts.fontSize.heading.SMALL};`,
+  `--hMD: ${fonts.fontSize.heading.MEDIUM};`,
+  `--hLG: ${fonts.fontSize.heading.LARGE};`,
+];
+const rootVars = `${cssVarsPre.join('')}`;
+---
+
+<!doctype html>
+<html style={rootVars} lang={i18next.language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <!---- SEO ---->
+    <title>{title}</title>
+    <meta name="description" content="Astro description" />
+    <HeadHrefLangs />
+    <!---- Favicon ---->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!---- Reset CSS ---->
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <script>
+      // ---- GSAP 導入 ----
+      import { gsap } from 'gsap';
+      // ---- GSAP Plugin 導入----
+      import { Flip } from 'gsap/Flip';
+      import { ScrollTrigger } from 'gsap/ScrollTrigger';
+      import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+      import { TextPlugin } from 'gsap/TextPlugin';
+      import { Draggable } from 'gsap/Draggable';
+      // ---- GSAP Plugin 登録 ----
+      gsap.registerPlugin(Flip, ScrollTrigger, ScrollToPlugin, TextPlugin, Draggable);
+    </script>
+  </head>
+  <body>
+    <p>aaaa</p>
+    <slot />
+    <style is:global>
+      code {
+        font-family:
+          Menlo,
+          Monaco,
+          Lucida Console,
+          Liberation Mono,
+          DejaVu Sans Mono,
+          Bitstream Vera Sans Mono,
+          Courier New,
+          monospace;
+      }
+      body {
+        font-family: var(--ja);
+      }
+    </style>
+  </body>
+</html>
