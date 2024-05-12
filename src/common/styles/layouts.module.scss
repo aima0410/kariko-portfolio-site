@@ -11,6 +11,21 @@
   place-items: center;
 }
 
+.fullScreen {
+  inline-size: 100vw;
+  block-size: 100svh;
+}
+
+.fixedFull {
+  position:fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.showBG {
+  margin-bottom: 100svh;
+}
+
 @media (max-width: 768px) {
   .flexCenter {
     flex-direction: column;
