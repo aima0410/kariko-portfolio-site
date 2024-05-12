@@ -4,16 +4,16 @@
     "baseUrl": ".",
     "paths": {
       "/": ["public/*"],
-      "@constants/*": ["src/common/constants/*"],
+      "@i18n/*": ["src/common/i18n/*"],
       "@images/*": ["src/common/images/*"],
       "@styles/*": ["src/common/styles/*"],
       "@utils/*": ["src/common/utils/*"],
-      "@function/*": ["src/components/function/*"],
+      "@functions/*": ["src/components/functions/*"],
       "@layouts/*": ["src/components/layouts/*"],
       "@ui-elements/*": ["src/components/ui-elements/*"],
       "@ui-parts/*": ["src/components/ui-parts/*"],
       "_app": ["src/pages/_app.astro"],
-      "_Section": ["src/components/layouts/_Section.astro"],
+      "_Section": ["src/components/layouts/_Section.astro"]
     }
   }
 }
