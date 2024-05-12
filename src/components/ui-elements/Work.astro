@@ -1,0 +1,26 @@
+---
+interface Props {
+  labels: string;
+}
+const { labels } = Astro.props;
+
+import { Image } from 'astro:assets';
+// ---- local Images ----
+import imgLatempo from '@images/works/latempo.jpg';
+// ---- Components ----
+import Card from '@ui-elements/_Card.astro';
+import ViewButton from '@functions/ViewButton.astro';
+---
+
+<Card>
+  <Image src={imgLatempo} alt="" />
+  <small>{labels}</small>
+  <h3>複合施設<br />La Tempo</h3>
+  <ViewButton text="VIEW MORE" colors={{ line: '#564C3E', bg: '#B29780' }} />
+</Card>
+
+<style>
+  small {
+    display: block;
+  }
+</style>
