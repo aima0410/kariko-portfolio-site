@@ -1,0 +1,30 @@
+---
+interface Colors {
+  line: string;
+  bg: string;
+}
+
+interface Props {
+  text: string;
+  colors: Colors;
+}
+const { text, colors } = Astro.props;
+
+// ---- ユニークCSS 埋め込み準備 ----
+const cssPre = [
+  `border: solid 1px ${colors.line};`, //
+  `background-color: ${colors.bg};`, //
+];
+const css = cssPre.join('');
+---
+
+<button style={css}>
+  {text}
+</button>
+
+<style>
+  button {
+    inline-size: 180px;
+    block-size: 44px;
+  }
+</style>
