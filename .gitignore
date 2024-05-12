@@ -29,12 +29,11 @@ pnpm-debug.log*
 /_note/*
 
 # 設定値
-/src/common/constants/*
 /src/common/styles/*.const.ts
 
 # テキストコンテンツ
-/public/locales/*
+/src/common/i18n/uiTexts.ts
 
 # 画像ファイル
 /public/images/*
-/src/common/imgaes/*
+/src/common/images/*
