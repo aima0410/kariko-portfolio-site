@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+// ---- local Images ----
+import punyakuma from '@images/punyakuma.png';
+// ---- CSS ----
+import layout from '@styles/layouts.module.scss';
+---
+<div class={`${layout.gridCenter} ${layout.fixedFull}`}>
+  <Image src={punyakuma} alt="ぷにゃくま。かりこのオリジナルキャラクターです。" />
+</div>
+
+<style>
+  div {
+    background-color: #4D949D;
+  }
+</style>
