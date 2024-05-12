@@ -5,10 +5,10 @@ interface Props {
 const { title } = Astro.props;
 
 // ---- Components ----
-import Footer from "@layouts/_Footer.astro";
-// ---- i18n 多言語対応 ----
-import i18next from 'i18next';
-import { HeadHrefLangs } from 'astro-i18next/components';
+import Footer from '@layouts/_Footer.astro';
+// ---- i18n ----
+import { getLangFromUrl } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
 // ---- CSS ----
 import fonts from '@styles/fonts.conts';
 // ---- CSS変数 埋め込み準備 ----
@@ -26,7 +26,7 @@ const rootVars = `${cssVarsPre.join('')}`;
 ---
 
 <!doctype html>
-<html style={rootVars} lang={i18next.language}>
+<html style={rootVars} lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -34,7 +34,10 @@ const rootVars = `${cssVarsPre.join('')}`;
     <!---- SEO ---->
     <title>{title}</title>
     <meta name="description" content="Astro description" />
-    <HeadHrefLangs />
+    <link rel="alternate" hreflang="ja" href="https://localhost:4321/" />
+    <link rel="alternate" hreflang="en" href="https://localhost:4321/en/" />
+    <!-- PWA -->
+    <link rel="manifest" href={`/site${lang.toUpperCase()}.webmanifest.json`} />
     <!---- Favicon ---->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!---- Reset CSS ---->

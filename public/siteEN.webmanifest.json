@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "KARIKO PORTFOLIO-SITE",
+  "short_name": "KARIKO",
+  "lang": "en",
+  "start_url": ".",
+  "icons": [
+    {
+      "src": "images/favicon.svg",
+      "sizes": "192x192 256x256 512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#1d1d1dff",
+  "background_color": "#1d1d1dff",
+  "display": "standalone"
+}
