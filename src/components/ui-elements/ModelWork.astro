@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string;
+}
+const { title: TITLE } = Astro.props;
+// ---- Components ----
+import Card from '@ui-elements/_Card.astro';
+import VisitButton from '@functions/ViewButton.astro';
+---
+
+<Card>
+  <h3>{TITLE}</h3>
+  <small></small>
+  <VisitButton text="" colors={{ line: '', bg: '' }} />
+</Card>

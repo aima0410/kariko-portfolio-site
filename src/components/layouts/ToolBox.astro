@@ -1,7 +1,14 @@
 ---
+// ---- Components ----
+import Tool from '@ui-elements/Tool.astro';
 import Section from '_Section';
+// ---- CSS ----
+import layout from '@styles/layouts.module.scss';
 ---
 
-<Section>
-  <div></div>
+<Section class={layout.showBG}>
+  <h2>TOOL BOX</h2>
+  <Tool title="tool 1" />
+  <Tool title="tool 2" />
+  <Tool title="tool 3" />
 </Section>

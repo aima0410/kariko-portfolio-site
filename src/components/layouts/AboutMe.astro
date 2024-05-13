@@ -1,7 +1,31 @@
 ---
+import { Image } from 'astro:assets';
+// ---- Components ----
 import Section from '_Section';
+import Note from '@ui-elements/Note.astro';
+import SkillSet from '@ui-elements/SkillSet.astro';
+import LatestBlog from '@ui-elements/LatestBlog.astro';
+import FavoMusic from '@ui-elements/FavoMusic.astro';
+// ---- local Images ----
+import myFace from '@images/myFace.jpg';
+// ---- CSS ----
+import layout from '@styles/layouts.module.scss';
 ---
 
-<Section>
-  <div></div>
+<Section class={layout.showBG}>
+  <h2>ABOUT ME</h2>
+  <Image src={myFace} alt="" />
+  <ul>
+    <li>かりこ</li>
+    <li>1998年7月生まれの25歳</li>
+    <li>神奈川県 川崎市 出身</li>
+  </ul>
+  <p>
+    福岡県在住のマルチクリエイターです。
+    はじまりは趣味のイラストをキッカケに頂いたグラフィックデザインのお仕事でした。そこからわらしべ長者の要領でWebデザイン、コーディング、フロントエンドと少しずつ技術の幅を広げ、現在に至ります。
+  </p>
+  <Note />
+  <SkillSet />
+  <LatestBlog />
+  <FavoMusic />
 </Section>

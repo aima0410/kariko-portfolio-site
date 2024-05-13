@@ -2,7 +2,7 @@
 interface Props {
   labels: string;
 }
-const { labels } = Astro.props;
+const { labels: LABELS } = Astro.props;
 
 import { Image } from 'astro:assets';
 // ---- local Images ----
@@ -14,7 +14,7 @@ import ViewButton from '@functions/ViewButton.astro';
 
 <Card>
   <Image src={imgLatempo} alt="" />
-  <small>{labels}</small>
+  <small>{LABELS}</small>
   <h3>複合施設<br />La Tempo</h3>
   <ViewButton text="VIEW MORE" colors={{ line: '#564C3E', bg: '#B29780' }} />
 </Card>

@@ -1,7 +1,16 @@
 ---
+// ---- Components ----
 import Section from '_Section';
+// ---- i18n ----
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+// ---- CSS ----
+import layout from '@styles/layouts.module.scss';
 ---
 
-<Section>
-  <div></div>
+<Section class={layout.showBG}>
+  <h2>MY PORTFOLIO SITE</h2>
+  <h3>kARIKO</h3>
+  <p>Designer / Front end Engineer</p>
 </Section>

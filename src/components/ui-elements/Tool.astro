@@ -1,0 +1,12 @@
+---
+interface Props {
+  title: string;
+}
+const { title: TITLE } = Astro.props;
+// ---- Components ----
+import Card from '@ui-elements/_Card.astro';
+---
+
+<Card>
+  <h3>{TITLE}</h3>
+</Card>
