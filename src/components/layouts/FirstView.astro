@@ -1,6 +1,4 @@
 ---
-// ---- Components ----
-import Section from '_Section';
 // ---- i18n ----
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
@@ -9,8 +7,26 @@ const t = useTranslations(lang);
 import layout from '@styles/layouts.module.scss';
 ---
 
-<Section class={layout.showBG}>
+<div class:list={[`${layout.showBG}`, `${layout.fullScreen}`, `${layout.gridCenter}`]}>
   <h2>MY PORTFOLIO SITE</h2>
-  <h3>kARIKO</h3>
-  <p>Designer / Front end Engineer</p>
-</Section>
+  <h3>KARIKO</h3>
+  <p class="en">Designer / Front end Engineer</p>
+</div>
+
+<style>
+  div {
+    color: var(--txtBT);
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+  h2 {
+    color: #fff;
+    font-size: var(--hLG);
+    font-weight: 800;
+  }
+  h3 {
+    font-size: var(--hMD);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+</style>
