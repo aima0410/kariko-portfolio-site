@@ -11,7 +11,8 @@ import { getLangFromUrl, useTranslations } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 // ---- CSS ----
-import fonts from '@styles/fonts.conts';
+import fonts from '@styles/fonts.const';
+import colors from '@styles/colors.const';
 // ---- CSS変数 埋め込み準備 ----
 const cssVarsPre = [
   `--ja: ${fonts.fontFamily.JA};`,
@@ -22,6 +23,15 @@ const cssVarsPre = [
   `--hSM: ${fonts.fontSize.heading.SMALL};`,
   `--hMD: ${fonts.fontSize.heading.MEDIUM};`,
   `--hLG: ${fonts.fontSize.heading.LARGE};`,
+  `--txtLT: ${colors.common.text.LIGHT};`,
+  `--txtNM: ${colors.common.text.NORMAL};`,
+  `--txtDK: ${colors.common.text.DARK};`,
+  `--txtBT: ${colors.common.text.BRIGHT};`,
+  `--bgPUNYAKUMA: ${colors.common.bg.PUNYAKUMA};`,
+  `--bgBASE: ${colors.common.bg.BASE};`,
+  `--bgLT: ${colors.common.bg.parts.LIGHT};`,
+  `--bgDK: ${colors.common.bg.parts.DARK};`,
+  `--lineMAIN: ${colors.common.line.MAIN};`,
 ];
 const rootVars = `${cssVarsPre.join('')}`;
 ---
@@ -73,19 +83,31 @@ const rootVars = `${cssVarsPre.join('')}`;
           monospace;
       }
       body {
+        color: var(--txtDK);
         font-family: var(--ja);
         font-size: var(--txtMD);
       }
-      small {
+      :where(h2, h3, h4, h5, h6) {
+        font-family: var(--en);
+        text-align: center;
+      }
+      :where(section) {
+        background-color: var(--bgBASE);
+      }
+      :where(section > h2) {
+        color: var(--txtNM);
+        font-size: var(--hMD);
+        font-weight: 700;
+        letter-spacing: 0.09em;
+      }
+      :where(small) {
         font-size: var(--txtSM);
       }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: var(--en);
+      :where(p) {
+        font-size: var(--txtMD);
+      }
+      :where(footer){
+        background-color: var(--bgDK);
       }
       .ja {
         font-family: var(--ja);

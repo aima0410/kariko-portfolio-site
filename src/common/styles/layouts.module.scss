@@ -4,11 +4,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .gridCenter {
   display: grid;
-  place-items: center;
+  place-content: center;
 }
 
 .fullScreen {
@@ -24,10 +27,4 @@
 
 .showBG {
   margin-bottom: 100svh;
-}
-
-@media (max-width: 768px) {
-  .flexCenter {
-    flex-direction: column;
-  }
 }
