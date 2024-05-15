@@ -1,6 +1,7 @@
 /* よく使うlayout用のスタイルの組み合わせを定義する */
 
-.flexCenter {
+// flexCenter
+.FC {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,22 +10,26 @@
   }
 }
 
-.gridCenter {
+// gridCenter
+.GC {
   display: grid;
   place-content: center;
 }
 
-.fullScreen {
+// fullScreen
+.FS {
   inline-size: 100vw;
   block-size: 100svh;
 }
 
-.fixedFull {
+// fullFixed
+.FF {
   position:fixed;
   inset: 0;
   z-index: -1;
 }
 
-.showBG {
+// showBG
+.SBG {
   margin-bottom: 100svh;
 }
