@@ -30,6 +30,7 @@ const cssVarsPre = [
   `--bgPUNYAKUMA: ${colors.common.bg.PUNYAKUMA};`,
   `--bgBASE: ${colors.common.bg.BASE};`,
   `--bgLT: ${colors.common.bg.parts.LIGHT};`,
+  `--bgNM: ${colors.common.bg.parts.NORMAL};`,
   `--bgDK: ${colors.common.bg.parts.DARK};`,
   `--lineMAIN: ${colors.common.line.MAIN};`,
 ];
@@ -95,20 +96,28 @@ const rootVars = `${cssVarsPre.join('')}`;
         background-color: var(--bgBASE);
       }
       :where(section > h2) {
+        padding-bottom: 50px;
         color: var(--txtNM);
         font-size: var(--hMD);
         font-weight: 700;
         letter-spacing: 0.09em;
       }
+      :where(p, li) {
+        font-size: var(--txtMD);
+        letter-spacing: 0.09em;
+        line-height: 1.8em;
+        font-weight: 500;
+        @media (max-width: 768px) {
+          font-weight:400;
+        }
+      }
+      :where(section p) {
+        text-align: justify;
+      }
       :where(small) {
         font-size: var(--txtSM);
       }
-      :where(p) {
-        font-size: var(--txtMD);
-        letter-spacing: 0.09em;
-        line-height: 1.6em;
-      }
-      :where(footer){
+      :where(footer) {
         background-color: var(--bgDK);
       }
       .ja {

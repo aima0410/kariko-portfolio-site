@@ -12,9 +12,11 @@ import myFace from '@images/myFace.jpg';
 import layout from '@styles/layouts.module.scss';
 ---
 
-<Section class={layout.SBG}>
+<Section class:list={[`${layout.SBG}`]}>
   <h2>ABOUT ME</h2>
-  <Image src={myFace} alt="" />
+  <div>
+    <Image src={myFace} alt="かりこのプロフィール写真。" />
+  </div>
   <ul>
     <li>かりこ</li>
     <li>1998年7月生まれの25歳</li>
@@ -29,3 +31,45 @@ import layout from '@styles/layouts.module.scss';
   <LatestBlog />
   <FavoMusic />
 </Section>
+
+<style>
+  div {
+    display: grid;
+    place-items: center;
+    max-inline-size: 350px;
+    max-block-size: 350px;
+    inline-size: 80vw;
+    block-size: 80vw;
+    border-radius: 50%;
+    background-color: #B8C8CC;
+    margin-inline: auto;
+    margin-block-end: 30px;
+  }
+  img {
+    display: block;
+    inline-size: calc(100% - 30px - 30px);
+    block-size: auto;
+    min-inline-size: 170px;
+    border-radius: 50%;
+  }
+  ul {
+    position: relative;
+    text-align: center;
+  }
+  li {
+    margin-block-end: 0.16em;
+  }
+  li:first-child {
+    color: var(--txtNM);
+    font-size: clamp(26px, 7vw, 46px);
+    font-weight: 700;
+  }
+  li:last-child {
+    margin-block-end: 30px;
+  }
+  p {
+    max-inline-size: 500px;
+    inline-size: 80vw;
+    margin-inline: auto;
+  }
+</style>
