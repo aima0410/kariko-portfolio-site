@@ -1,6 +1,8 @@
 // ---- lit ----
 import { LitElement, html, css } from 'lit';
+import { customElement } from "lit/decorators.js";
 
+@customElement("theme-toggle")
 export class ThemeToggleButton extends LitElement {
   static styles = css`
     button {
@@ -34,5 +36,3 @@ export class ThemeToggleButton extends LitElement {
     </button>`;
   }
 }
-
-customElements.define('theme-toggle', ThemeToggleButton);
