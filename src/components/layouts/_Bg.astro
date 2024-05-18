@@ -5,12 +5,17 @@ import punyakuma from '@images/punyakuma.png';
 // ---- CSS ----
 import layout from '@styles/layouts.module.scss';
 ---
+
 <div class={`${layout.GC} ${layout.FF}`}>
   <Image src={punyakuma} alt="ぷにゃくま。かりこのオリジナルキャラクターです。" />
 </div>
 
 <style>
   div {
-    background-color: #4D949D;
+    background-color: var(--bgPUNYAKUMA);
+  }
+  img {
+    max-inline-size: 450px;
+    inline-size: 76vw;
   }
 </style>
