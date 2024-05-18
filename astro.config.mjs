@@ -14,7 +14,8 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   i18n: {
     defaultLocale: "ja",
-    locales: ["ja", "en"]
+    locales: ["ja", "en"],
+    defaultLocaleRoute: '/',
   },
   site: "http://localhost:4321/",
   integrations: [lit(), sitemap(), robotsTxt(), partytown(), mdx()]

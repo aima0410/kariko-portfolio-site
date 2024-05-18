@@ -33,6 +33,7 @@ pnpm-debug.log*
 
 # テキストコンテンツ
 /src/common/i18n/uiTexts.ts
+/src/content/**/*.mdx
 
 # 画像ファイル
 /public/images/*
