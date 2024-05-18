@@ -1,6 +1,27 @@
 ---
+// ---- Components ----
 import Card from '@ui-elements/_Card.astro';
+import { NoteList } from '@ui-parts/NoteList'
+// ---- Contents ----
+import { getCollection } from 'astro:content';
+
+const notes = await getCollection('note', ({ data, id }) => {
+  const lang = Astro.currentLocale;
+  const isDraft = data.draft === true;
+  const isLang = id.startsWith(`${lang}/`);
+  return import.meta.env.PROD ? !isDraft && isLang : isLang;
+});
 ---
+
 <Card>
-  Note
+  <h3>NOTE</h3>
+  <p>{}</p>
+  <!-- @ts-ignore -->
+  {notes.map((note) => <NoteList title={note.data.title} />)}
 </Card>
+
+<style>
+  h3 {
+    margin-block-end: 20px;
+  }
+</style>

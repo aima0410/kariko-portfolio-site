@@ -5,3 +5,10 @@ const { class: className } = Astro.props;
 <section class={className}>
   <slot />
 </section>
+
+<style>
+  section {
+    padding: 90px 0;
+    inline-size: 100vw;
+  }
+</style>

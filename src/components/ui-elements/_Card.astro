@@ -2,6 +2,18 @@
 
 ---
 
-<div>
+<div class="card">
   <slot />
 </div>
+
+<style>
+  div {
+    max-inline-size: 420px;
+    inline-size: 60vw;
+    min-inline-size: 280px;
+    padding:38px 30px 30px;
+    background: rgba(255, 255, 255, 0.01);
+    border: solid 3px var(--txtDK);
+    border-radius: 15px;
+  }
+</style>

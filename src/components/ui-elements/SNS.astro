@@ -3,14 +3,12 @@ interface Props {
   title: string;
 }
 const { title: TITLE } = Astro.props;
-import { Image } from 'astro:assets';
+// import { Image } from 'astro:assets';
 // ---- Components ----
 import Card from '@ui-elements/_Card.astro';
 // ---- local images ----
 // import Icon from `@images/contact/${title}.svg`;
 ---
 
-<Card>
-  SNS IMG
-</Card>
+<Card> SNS IMG </Card>
 <h3>{TITLE}</h3>
