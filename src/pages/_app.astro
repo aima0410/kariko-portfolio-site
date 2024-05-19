@@ -123,6 +123,9 @@ const rootVars = `${cssVarsPre.join('')}`;
       :where(small) {
         font-size: var(--txtSM);
       }
+      :where(button, [type='button'], [type='submit'], [type='reset']) {
+        touch-action: manipulation;
+      }
       .ja {
         font-family: var(--ja);
       }
