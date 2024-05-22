@@ -1,0 +1,37 @@
+---
+interface Props {
+  src: ImageMetadata;
+  title: string;
+}
+const { src: SRC, title: TITLE } = Astro.props;
+import { Image } from 'astro:assets';
+---
+
+<li>
+  <Image src={SRC} alt={`${TITLE}のアイコン`} />
+  <h4>{TITLE}</h4>
+</li>
+
+<style>
+  li {
+    display: grid;
+    place-items: center;
+    inline-size: calc(50% - 10px);
+    block-size: auto;
+    padding: 16px 24px 5px 24px;
+    background-color: var(--bgLT);
+    border: solid 3px var(--txtDK);
+    border-radius: 6px;
+    margin-block-end: 24px;
+  }
+  img {
+    display: block;
+    max-width: 64px;
+    inline-size: 100%;
+    block-size: auto;
+    margin-block-end: 2px;
+  }
+  h4 {
+    font-weight: 900;
+  }
+</style>

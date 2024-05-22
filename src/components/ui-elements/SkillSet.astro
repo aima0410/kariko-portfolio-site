@@ -1,5 +1,41 @@
 ---
+// ---- Components ----
 import Card from '@ui-elements/_Card.astro';
+import Skill from '@ui-parts/Skill.astro';
+// ---- Images ----
+import HTML from '@images/skills/HTML5.svg';
 ---
 
-<Card> <h3>SKILL SET</h3> </Card>
+<Card>
+  <h3>SKILL SET</h3>
+  <ul>
+    <Skill src={HTML} title="HTML5" />
+    <Skill src={HTML} title="HTML5" />
+    <Skill src={HTML} title="HTML5" />
+    <Skill src={HTML} title="HTML5" />
+    <Skill src={HTML} title="HTML5" />
+    <Skill src={HTML} title="HTML5" />
+    <Skill src={HTML} title="HTML5" />
+  </ul>
+</Card>
+
+<style>
+  h3 {
+    margin-block-end: 30px;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow-y: scroll;
+    inline-size: 100%;
+    block-size: 350px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar{
+      display: none;
+    }
+  }
+</style>
