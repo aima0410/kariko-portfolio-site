@@ -6,7 +6,8 @@ import Skill from '@ui-parts/Skill.astro';
 import HTML from '@images/skills/HTML5.svg';
 ---
 
-<Card>
+<Card class:list={['card--inner-shadow']}>
+  <div class="card__inner"></div>
   <h3>SKILL SET</h3>
   <ul>
     <Skill src={HTML} title="HTML5" />
@@ -20,10 +21,27 @@ import HTML from '@images/skills/HTML5.svg';
 </Card>
 
 <style>
+  .card__inner {
+    position:absolute;
+    top:10px;
+    left:10px;
+    z-index: 0;
+    pointer-events: none;
+    inline-size: calc(100% - 20px);
+    block-size: calc(100% - 20px);
+    background: rgb(255 255 255 / 0.3);
+    border: solid 3px var(--txtDK);
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+  }
   h3 {
+    position: relative;
+    z-index: 1;
     margin-block-end: 30px;
   }
   ul {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -34,7 +52,7 @@ import HTML from '@images/skills/HTML5.svg';
     border-bottom-right-radius: 6px;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    &::-webkit-scrollbar{
+    &::-webkit-scrollbar {
       display: none;
     }
   }
