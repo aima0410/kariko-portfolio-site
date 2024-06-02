@@ -1,5 +1,61 @@
 ---
+// import Image from 'astro:assets';
 import Card from '@ui-elements/_Card.astro';
 ---
 
-<Card><h3>LATEST BLOG</h3></Card>
+<Card>
+  <h3>LATEST BLOG</h3>
+  <article>
+    <div>
+      <!-- <Image src={} alt="" /> -->
+      <p class="blog_date">
+        <span class="blog_day">08</span>
+        <span class="blog_month">JUN</span>
+      </p>
+    </div>
+    <h4>BLOGのタイトルがここに入ります。どーんと。</h4>
+  </article>
+</Card>
+
+<style>
+  h3 {
+    margin-block-end: 20px;
+  }
+  div {
+    position: relative;
+    inline-size: 96%;
+    aspect-ratio: 220 / 140;
+    background-color: var(--bgLT);
+    border: solid 3px var(--txtDK);
+    border-radius: 8px;
+    margin: 0 auto 20px;
+  }
+  .blog_date {
+    position: absolute;
+    top: 5%;
+    left: 4%;
+    padding: 6px 8px;
+    background-color: #f1f1f1;
+    border: solid 3px var(--txtDK);
+    border-radius: 5px;
+    text-align: center;
+  }
+  :where(.blog_day, .blog_month) {
+    display: block;
+    font-family: var(--en);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.2em;
+  }
+  .blog_day {
+    font-size: clamp(15px, 3vw, 24px);
+  }
+  .blog_month {
+    font-size: clamp(9px, 2vw, 16px);
+    font-weight: 900;
+  }
+  h4 {
+    font-size: var(--txtLG);
+    text-align: left;
+  }
+</style>
