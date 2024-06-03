@@ -1,5 +1,117 @@
 ---
+// import Image from 'astro:assets';
 import Card from '@ui-elements/_Card.astro';
 ---
 
-<Card><h3>FAVO MUSIC</h3></Card>
+<Card>
+  <section>
+    <div class="thumbnail"></div>
+    <div class="heading">
+      <h3>FAVO MUSIC</h3>
+      <h4>『ビリミリオン』優里</h4>
+    </div>
+    <details id="favomusic_details">
+      <summary>
+        <button class="button"></button>
+        <span></span>
+      </summary>
+    </details>
+  </section>
+  <iframe
+    width="200"
+    height="100"
+    src="https://www.youtube-nocookie.com/embed/vUsikBoa8i0?si=BixTgx0V0w5oXees"
+    title="YouTube video player『ビリミリオン』優里"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+    id="favomusic_youtube"></iframe>
+</Card>
+
+<style>
+  section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+  }
+  section:has(details[open]) {
+    margin-block-end: 20px;
+  }
+  .thumbnail {
+    inline-size: 16%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: var(--bgLT);
+    margin-inline-end: 5px;
+  }
+  .heading {
+    margin-inline-end: 5px;
+  }
+  h3 {
+    font-size: clamp(19px, 5vw, 30px);
+  }
+  h4 {
+    font-size: clamp(9px, 3vw, 14px);
+  }
+  details {
+    inline-size: 16%;
+  }
+  summary {
+    position: relative;
+    inline-size: 100%;
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  span {
+    position: absolute;
+    top: 30%;
+    left: 34%;
+    display: block;
+    background: var(--bgLT);
+    inline-size: 36%;
+    block-size: calc(tan(60deg) * 50% / 2);
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    transform-origin: center;
+    transition: transform 400ms ease;
+    pointer-events: none;
+  }
+  .button {
+    display: block;
+    inline-size: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: solid 3px var(--bgLT);
+    pointer-events: none;
+  }
+  details[open] span {
+    transform: rotate(90deg) translate(6%, 1%);
+  }
+  iframe {
+    display: none;
+    inline-size: 100%;
+    block-size: calc(100px + 10vw);
+  }
+  .open {
+    display: block;
+  }
+</style>
+
+<script>
+  const favomusicDetails = document.querySelector('#favomusic_details');
+  const favomusicButton = favomusicDetails?.querySelector('summary');
+  const favomusicYoutube = document.querySelector('#favomusic_youtube') as HTMLElement;
+
+  favomusicButton?.addEventListener('click', (e) => {
+    if (favomusicYoutube) {
+      if (!favomusicYoutube.classList.contains('open')) {
+        favomusicYoutube.classList.add('open');
+      } else {
+        favomusicYoutube.classList.remove('open');
+      }
+    }
+  });
+</script>
