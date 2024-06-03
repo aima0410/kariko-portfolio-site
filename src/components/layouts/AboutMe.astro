@@ -26,10 +26,12 @@ import layout from '@styles/layouts.module.scss';
     福岡県在住のマルチクリエイターです。
     はじまりは趣味のイラストをキッカケに頂いたグラフィックデザインのお仕事でした。そこからわらしべ長者の要領でWebデザイン、コーディング、フロントエンドと少しずつ技術の幅を広げ、現在に至ります。
   </p>
-  <Note />
-  <SkillSet />
-  <LatestBlog />
-  <FavoMusic />
+  <section>
+    <Note />
+    <SkillSet />
+    <LatestBlog />
+    <FavoMusic />
+  </section>
 </Section>
 
 <style>
@@ -41,7 +43,7 @@ import layout from '@styles/layouts.module.scss';
     inline-size: 80vw;
     block-size: 80vw;
     border-radius: 50%;
-    background-color: #B8C8CC;
+    background-color: #b8c8cc;
     margin-inline: auto;
     margin-block-end: 30px;
   }
@@ -71,5 +73,15 @@ import layout from '@styles/layouts.module.scss';
     max-inline-size: 500px;
     inline-size: 80vw;
     margin-inline: auto;
+  }
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 100px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 </style>
